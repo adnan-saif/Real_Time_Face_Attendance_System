@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .btn {
+            display: block;
+            margin: 15px auto;
+            padding: 12px 20px;
+            width: 80%;
+            background: #2193b0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #19788a;
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🎯 Face Attendance System</h1>
+        <a href="/attendance" class="btn">📸 Start Attendance</a>
+        <a href="/users" class="btn">👥 Show Registered Users</a>
+        <a href="/register" class="btn">➕ Register New Face</a>
+        <a href="/attendance_log" class="btn">📅 View Attendance Logs</a>
+    </div>
+</body>
+</html>

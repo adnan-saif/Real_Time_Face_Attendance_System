@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Logs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>View Attendance Records</h2>
+        <form method="POST">
+            <select name="date" required>
+                <option value="">Select Date</option>
+                {% for d in dates %}
+                <option value="{{ d }}" {% if selected_date == d %}selected{% endif %}>{{ d }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">View</button>
+        </form>
+        {% if selected_date %}
+        <h3>Attendance for {{ selected_date }}</h3>
+        {% if records %}
+        <table>
+            <tr><th>Name</th><th>Time</th></tr>
+            {% for name, dt in records %}
+            <tr><td>{{ name }}</td><td>{{ dt }}</td></tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No records found.</p>
+        {% endif %}
+        {% endif %}
+        <a href="/" class="btn">Back</a>
+    </div>
+</body>
+</html>
